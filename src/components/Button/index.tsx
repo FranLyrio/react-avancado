@@ -1,11 +1,11 @@
-import * as S from './styles';
+import * as S from './styles'
 
 export type ButtonProps = {
-	children?: React.ReactNode;
-	size?: 'small' | 'medium' | 'large';
-	fullWidth?: boolean;
-	icon?: React.ReactNode;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+	children?: React.ReactNode
+	size?: 'small' | 'medium' | 'large'
+	fullWidth?: boolean
+	icon?: React.ReactNode
+} & React.ButtonHTMLAttributes<HTMLButtonElement>
 
 const Button = ({
 	children,
@@ -19,6 +19,6 @@ const Button = ({
 
 		{!!children && <span>{children}</span>}
 	</S.Wrapper>
-);
+)
 
-export default Button;
+export default Button

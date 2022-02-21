@@ -1,5 +1,5 @@
-import { Meta, Story } from '@storybook/react';
-import Heading, { HeadingProps } from '.';
+import { Meta, Story } from '@storybook/react'
+import Heading, { HeadingProps } from '.'
 
 export default {
 	title: 'Heading',
@@ -9,8 +9,8 @@ export default {
 			type: 'string'
 		}
 	}
-} as Meta;
+} as Meta
 
 export const Basic: Story<HeadingProps> = (args) => (
 	<Heading {...args}>Most Populars</Heading>
-);
+)

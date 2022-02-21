@@ -1,9 +1,9 @@
-import { Meta, Story } from '@storybook/react';
-import Logo from '.';
+import { Meta, Story } from '@storybook/react'
+import Logo from '.'
 
 export default {
 	title: 'Logo',
 	component: Logo
-} as Meta;
+} as Meta
 
-export const Basic: Story = (args) => <Logo {...args} />;
+export const Basic: Story = (args) => <Logo {...args} />

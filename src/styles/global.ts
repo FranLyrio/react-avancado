@@ -1,4 +1,4 @@
-import { createGlobalStyle, css } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
   /* poppins-300 - latin */
@@ -63,6 +63,6 @@ const GlobalStyles = createGlobalStyle`
   html, body, #__next {
     height: 100%;
   }
-`;
+`
 
-export default GlobalStyles;
+export default GlobalStyles

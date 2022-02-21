@@ -1,9 +1,9 @@
-import styled, { css, DefaultTheme } from 'styled-components';
-import { ButtonProps } from '.';
+import styled, { css, DefaultTheme } from 'styled-components'
+import { ButtonProps } from '.'
 
 type WrapperProps = Omit<ButtonProps, 'children' | 'icon'> & {
-	hasIcon: boolean;
-};
+	hasIcon: boolean
+}
 
 const wrapperModifiers = {
 	small: (theme: DefaultTheme) => css`
@@ -36,7 +36,7 @@ const wrapperModifiers = {
 			}
 		}
 	`
-};
+}
 
 export const Wrapper = styled.button<WrapperProps>`
 	${({ theme, size, fullWidth, hasIcon }) => css`
@@ -52,4 +52,4 @@ export const Wrapper = styled.button<WrapperProps>`
 		${!!fullWidth && wrapperModifiers.fullWidth()};
 		${hasIcon && wrapperModifiers.withIcon(theme)};
 	`}
-`;
+`
