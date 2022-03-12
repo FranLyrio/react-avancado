@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom'
+import 'jest-styled-components'
 import { screen } from '@testing-library/react'
 import { renderWithTheme } from '../../utils/tests/helpers'
 
