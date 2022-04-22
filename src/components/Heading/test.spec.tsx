@@ -1,5 +1,3 @@
-import 'jest-styled-components'
-import '@testing-library/jest-dom/extend-expect'
 import { screen } from '@testing-library/react'
 import { renderWithTheme } from '../../utils/tests/helpers'
 
@@ -26,7 +24,7 @@ describe('<Heading />', () => {
 		renderWithTheme(<Heading lineLeft>Won Games</Heading>)
 
 		expect(screen.getByRole('heading', { name: /Won Games/i })).toHaveStyle({
-			'border-left': '0.7rem solid #3CD3C1'
+			'border-left': '0.7rem solid #F231A5'
 		})
 	})
 
