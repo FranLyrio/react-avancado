@@ -70,16 +70,16 @@ const GlobalStyles: GlobalStyleComponent<
     font-size: 62.5%;
   }
 
-  ${({ theme, removeBg }) => css`
-		body {
-			font-family: ${theme.font.family};
-			font-size: ${theme.font.sizes.medium};
-			${!removeBg &&
-			css`
-				background-color: ${theme.colors.mainBg};
+  body {
+      ${({ theme, removeBg }) => css`
+				font-family: ${theme.font.family};
+				font-size: ${theme.font.sizes.medium};
+				${!removeBg &&
+				css`
+					background-color: ${theme.colors.mainBg};
+				`}
 			`}
 		}
-	`}
   
   html, body, #__next {
     height: 100%;
