@@ -1,11 +1,14 @@
-import '@testing-library/jest-dom/extend-expect';
-import { renderWithTheme } from 'utils/tests/helpers'
-import { screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react'
+import { renderWithTheme } from '../../utils/tests/helpers'
 
-import {{pascalCase name}} from '.';
+import {{ pascalCase name }} from '.'
 
 describe('<{{pascalCase name}} />', () => {
-	it('should render the {{pascalCase name}}', () => {
-		renderWithTheme(<{{pascalCase name}} />);
+	it('should render the heading', () => {
+		const { container } = renderWithTheme(<{{pascalCase name}} />)
+
+		const heading = screen.getByRole('heading', { name: /{{pascalCase name}}/i })
+
+		expect(heading).toBeInTheDocument()
 	});
 });
