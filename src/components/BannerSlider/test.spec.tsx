@@ -30,10 +30,9 @@ describe('<BannerSlider />', () => {
 	})
 
 	it('should render scroll with dots', () => {
-		renderWithTheme(<BannerSlider items={items} />)
+		const { container } = renderWithTheme(<BannerSlider items={items} />)
 
-		expect(screen.getByRole('button', { name: '1' }))
-		expect(screen.getByRole('button', { name: '2' }))
+		expect(container.querySelector('.slick-dots')).toBeInTheDocument()
 	})
 
 	it('should render with 1 active item', () => {
