@@ -58,7 +58,7 @@ export const Wrapper = styled.section<WrapperProps>`
 
 		.slick-prev.slick-disabled,
 		.slick-next.slick-disabled {
-			/* visibility: hidden; */
+			visibility: hidden;
 		}
 	`}
 `
