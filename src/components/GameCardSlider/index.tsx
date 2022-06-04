@@ -52,7 +52,7 @@ const settings: SliderSettings = {
 
 const GameCardSlider = ({
 	items,
-	arrowColor = 'black'
+	arrowColor = 'white'
 }: GameCardSliderProps) => (
 	<S.Wrapper arrowColor={arrowColor}>
 		<Slider settings={settings}>
