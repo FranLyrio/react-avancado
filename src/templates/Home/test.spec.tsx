@@ -21,17 +21,13 @@ const props = {
 }
 
 describe('<Home />', () => {
-	it('should render menu and footer', () => {
+	it('should render Home template', () => {
 		renderWithTheme(<Home {...props} />)
 
 		expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument()
 		expect(
 			screen.getByRole('heading', { name: /follow us/i })
 		).toBeInTheDocument()
-	})
-
-	it('should render the headings', () => {
-		renderWithTheme(<Home {...props} />)
 
 		expect(screen.getByRole('heading', { name: /news/i })).toBeInTheDocument()
 		expect(
@@ -43,10 +39,7 @@ describe('<Home />', () => {
 		expect(
 			screen.getByRole('heading', { name: /free games/i })
 		).toBeInTheDocument()
-	})
 
-	it('should render section elements', () => {
-		renderWithTheme(<Home {...props} />)
 		// banner
 		expect(screen.getAllByText(/defy death 1/i)).toHaveLength(1)
 		// card game (5 sections com 4 cards cada = 5x4 = 20; apenas um card 5x1)
