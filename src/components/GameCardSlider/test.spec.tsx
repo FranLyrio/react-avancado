@@ -48,14 +48,14 @@ describe('<GameSlider />', () => {
 		expect(container.querySelectorAll('.slick-active')).toHaveLength(4)
 	})
 
-	it('should render back arrows by default', () => {
+	it('should render black arrows by default', () => {
 		renderWithTheme(<GameCardSlider items={items} />)
 
 		expect(screen.getByLabelText(/previous games/i)).toHaveStyle({
-			color: '#030517'
+			color: '#fafafa'
 		})
 		expect(screen.getByLabelText(/next games/i)).toHaveStyle({
-			color: '#030517'
+			color: '#fafafa'
 		})
 	})
 
