@@ -107,4 +107,12 @@ describe('<TextField />', () => {
 		userEvent.tab()
 		expect(input).not.toHaveFocus()
 	})
+
+	it('renders with error', () => {
+		renderWithTheme(
+			<TextField label="TextField" labelFor="TextField" error="Error message" />
+		)
+
+		expect(screen.getByText('Error message')).toBeInTheDocument()
+	})
 })
