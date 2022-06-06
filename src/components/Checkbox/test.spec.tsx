@@ -58,4 +58,14 @@ describe('<Checkbox />', () => {
 
 		expect(onCheck).toHaveBeenCalledWith(false)
 	})
+
+	it('should be accessible with tab', () => {
+		renderWithTheme(<Checkbox label="Checkbox label" labelFor="Checkbox" />)
+
+		// espero que a página esteja em foco
+		expect(document.body).toHaveFocus()
+		// ao dar "tab", o foco vai para o input
+		userEvent.tab()
+		expect(screen.getByLabelText(/checkbox label/i)).toHaveFocus()
+	})
 })
