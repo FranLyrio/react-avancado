@@ -8,5 +8,6 @@ module.exports = {
 		'!**/*.d.ts',
 		'!**/node_modules/**'
 	],
-	setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts']
+	setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
+	modulePaths: ['<rootDir>/src/', '<rootDir>/.jest']
 }
