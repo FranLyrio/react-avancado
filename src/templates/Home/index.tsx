@@ -1,6 +1,7 @@
 import { GameCardProps } from 'components/GameCard'
 import { BannerProps } from 'components/Banner'
 import { HighlightProps } from 'components/Highlight'
+
 import { Container } from 'components/Container'
 import Menu from 'components/Menu'
 import Footer from 'components/Footer'

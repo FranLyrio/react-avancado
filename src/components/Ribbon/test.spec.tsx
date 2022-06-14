@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom/extend-expect'
 import { renderWithTheme } from 'utils/tests/helpers'
 import { screen } from '@testing-library/react'
 
