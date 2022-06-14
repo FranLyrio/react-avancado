@@ -1,7 +1,7 @@
-import GameCardSlider from '../GameCardSlider'
-import Heading from '../Heading'
-import Highlight, { HighlightProps } from '../Highlight'
-import { GameCardProps } from '../GameCard'
+import GameCardSlider from 'components/GameCardSlider'
+import Heading from 'components/Heading'
+import Highlight, { HighlightProps } from 'components/Highlight'
+import { GameCardProps } from 'components/GameCard'
 
 import * as S from './styles'
 

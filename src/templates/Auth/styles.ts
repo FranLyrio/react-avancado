@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
-import * as LogoStyles from '../../components/Logo/styles'
-import * as HeadingStyles from '../../components/Heading/styles'
+import * as LogoStyles from 'components/Logo/styles'
+import * as HeadingStyles from 'components/Heading/styles'
 
 export const Wrapper = styled.main`
 	display: grid;

@@ -1,5 +1,5 @@
-import Slider, { SliderSettings } from '../Slider'
-import Banner, { BannerProps } from '../Banner'
+import Slider, { SliderSettings } from 'components/Slider'
+import Banner, { BannerProps } from 'components/Banner'
 import * as S from './styles'
 
 export type BannerSliderProps = {

@@ -1,9 +1,9 @@
-import '../../../.jest/match-media-mock'
+import 'match-media-mock'
 import { screen } from '@testing-library/react'
-import { renderWithTheme } from '../../utils/tests/helpers'
+import { renderWithTheme } from 'utils/tests/helpers'
 
-import gamesMock from '../GameCardSlider/mock'
-import highlightMock from '../Highlight/mock'
+import gamesMock from 'components/GameCardSlider/mock'
+import highlightMock from 'components/Highlight/mock'
 
 import Showcase from '.'
 

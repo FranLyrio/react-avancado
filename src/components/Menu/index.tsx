@@ -5,9 +5,9 @@ import { ShoppingCart as ShoppingCartIcon } from '@styled-icons/material-outline
 import { Search as SearchIcon } from '@styled-icons/material-outlined/Search'
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close'
 
-import Button from '../Button'
-import Logo from '../Logo'
-import MediaMatch from '../MediaMatch'
+import Button from 'components/Button'
+import Logo from 'components/Logo'
+import MediaMatch from 'components/MediaMatch'
 
 import * as S from './styles'
 

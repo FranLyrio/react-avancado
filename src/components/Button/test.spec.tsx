@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react'
 import { BsCartPlus } from 'react-icons/bs'
 
-import { renderWithTheme } from '../../utils/tests/helpers'
+import { renderWithTheme } from 'utils/tests/helpers'
 
 import Button from '.'
 
