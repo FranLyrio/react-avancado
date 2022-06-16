@@ -7,17 +7,22 @@ import { useMemo } from 'react'
 import * as S from './styles'
 
 type Platform = 'windows' | 'linux' | 'mac'
+type Rating = 'BR0' | 'BR10' | 'BR12' | 'BR14' | 'BR16' | 'BR18'
 
 export type GameDetailsProps = {
 	developer: string
 	platforms: Platform[]
 	releaseDate: string
+	rating: Rating
+	genres: string[]
 }
 
 const GameDetails = ({
 	platforms,
 	developer,
-	releaseDate
+	releaseDate,
+	rating,
+	genres
 }: GameDetailsProps) => {
 	const platformIcons = {
 		linux: <Linux title="Linux" size={18} />,
@@ -35,6 +40,18 @@ const GameDetails = ({
 
 		return formattedDate
 	}, [releaseDate])
+
+	const formattedRating = useMemo(() => {
+		if (rating === 'BR0') {
+			return 'FREE'
+		} else {
+			return `${rating.replace('BR', '')}+`
+		}
+	}, [rating])
+
+	const formattedGenres = useMemo(() => {
+		return genres.join(' / ')
+	}, [genres])
 
 	return (
 		<S.Wrapper>
@@ -71,12 +88,12 @@ const GameDetails = ({
 
 				<S.Block>
 					<S.Label>Rating</S.Label>
-					<S.Description>18+2k</S.Description>
+					<S.Description>{formattedRating}</S.Description>
 				</S.Block>
 
 				<S.Block>
 					<S.Label>Genres</S.Label>
-					<S.Description>Action / Adventure</S.Description>
+					<S.Description>{formattedGenres}</S.Description>
 				</S.Block>
 			</S.Content>
 		</S.Wrapper>
