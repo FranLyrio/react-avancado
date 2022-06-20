@@ -71,13 +71,13 @@ const Menu = ({ username }: MenuProps) => {
 
 				{!username && (
 					<S.RegisterBox>
-						<Link href="sign-in" passHref>
+						<Link href="/sign-in" passHref>
 							<Button fullWidth size="large">
 								Sign in
 							</Button>
 						</Link>
 						<span>or</span>
-						<Link href="sign-up" passHref>
+						<Link href="/sign-up" passHref>
 							<S.CreateAccount title="Sign up">Sign up</S.CreateAccount>
 						</Link>
 					</S.RegisterBox>
