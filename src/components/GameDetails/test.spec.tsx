@@ -46,6 +46,18 @@ describe('<GameDetails />', () => {
 		expect(screen.getByText(/free/i))
 	})
 
+	it('should render the publisher', () => {
+		renderWithTheme(<GameDetails {...props} />)
+
+		expect(screen.getByText(/walkabout/i))
+	})
+
+	it('should render the developer', () => {
+		renderWithTheme(<GameDetails {...props} />)
+
+		expect(screen.getByText(/different tales/i))
+	})
+
 	it('should render 18+ rating when BR18', () => {
 		renderWithTheme(<GameDetails {...props} rating="BR18" />)
 
