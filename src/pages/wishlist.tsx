@@ -1,5 +1,18 @@
-import Wishlist from 'templates/Wishlist'
+import Wishlist, { WishlistTemplateProps } from 'templates/Wishlist'
 
-export default function WishListPage() {
-	return <Wishlist />
+import gamesMock from 'components/GameCardSlider/mock'
+import highlightMock from 'components/Highlight/mock'
+
+export default function WishListPage(props: WishlistTemplateProps) {
+	return <Wishlist {...props} />
+}
+
+export async function getStaticProps() {
+	return {
+		props: {
+			games: gamesMock,
+			recommendedGames: gamesMock,
+			recommendedHighLight: highlightMock
+		}
+	}
 }
