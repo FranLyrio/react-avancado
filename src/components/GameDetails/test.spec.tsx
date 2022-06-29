@@ -43,25 +43,25 @@ describe('<GameDetails />', () => {
 	it('should render free rating when BR0', () => {
 		renderWithTheme(<GameDetails {...props} />)
 
-		expect(screen.getByText(/free/i))
+		expect(screen.getByText(/free/i)).toBeInTheDocument()
 	})
 
 	it('should render the publisher', () => {
 		renderWithTheme(<GameDetails {...props} />)
 
-		expect(screen.getByText(/walkabout/i))
+		expect(screen.getByText(/walkabout/i)).toBeInTheDocument()
 	})
 
 	it('should render the developer', () => {
 		renderWithTheme(<GameDetails {...props} />)
 
-		expect(screen.getByText(/different tales/i))
+		expect(screen.getByText(/different tales/i)).toBeInTheDocument()
 	})
 
 	it('should render 18+ rating when BR18', () => {
 		renderWithTheme(<GameDetails {...props} rating="BR18" />)
 
-		expect(screen.getByText(/18\+/i))
+		expect(screen.getByText(/18\+/i)).toBeInTheDocument()
 	})
 
 	it('should render formatted date', () => {
