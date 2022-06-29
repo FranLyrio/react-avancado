@@ -1,5 +1,6 @@
 import Base from 'templates/Base'
 
+import { Grid } from 'components/Grid'
 import Heading from 'components/Heading'
 import Showcase from 'components/Showcase'
 import { Container } from 'components/Container'
@@ -25,9 +26,11 @@ const Wishlist = ({
 				Wishlist
 			</Heading>
 
-			{games?.map((game, index) => (
-				<GameCard key={`wishlist-${index}`} {...game} />
-			))}
+			<Grid>
+				{games?.map((game, index) => (
+					<GameCard key={`wishlist-${index}`} {...game} />
+				))}
+			</Grid>
 		</Container>
 
 		<Showcase
