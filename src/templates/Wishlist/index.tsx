@@ -1,14 +1,12 @@
 import Base from 'templates/Base'
 
-import { Grid } from 'components/Grid'
-import { Divider } from 'components/Divider'
 import Heading from 'components/Heading'
 import Showcase from 'components/Showcase'
+import { Grid } from 'components/Grid'
+import { Divider } from 'components/Divider'
 import { Container } from 'components/Container'
 import GameCard, { GameCardProps } from 'components/GameCard'
 import { HighlightProps } from 'components/Highlight'
-
-import * as S from './styles'
 
 export type WishlistTemplateProps = {
 	recommendedGames: GameCardProps[]
