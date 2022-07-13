@@ -44,7 +44,7 @@ describe('<GameItem />', () => {
 		renderWithTheme(<GameItem {...props} paymentInfo={paymentInfo} />)
 
 		expect(
-			screen.getByRole('img', { name: paymentInfo.flagImg })
-		).toHaveAttribute('src', props.img)
+			screen.getByRole('img', { name: paymentInfo.cardFlag })
+		).toHaveAttribute('src', paymentInfo.flagImg)
 	})
 })
