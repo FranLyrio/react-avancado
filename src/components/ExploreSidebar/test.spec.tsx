@@ -1,10 +1,10 @@
+import userEvent from '@testing-library/user-event'
 import { screen, waitFor } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
 
 import mock from './mock'
 
 import ExploreSidebar from '.'
-import userEvent from '@testing-library/user-event'
 
 describe('<ExploreSidebar />', () => {
 	it('should render the headings', () => {
