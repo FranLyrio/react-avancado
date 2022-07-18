@@ -98,28 +98,32 @@ describe('<ExploreSidebar />', () => {
 		)
 	})
 
-	it('should open/close sidebar when filtering on mobile ', () => {
+	it('should open/close sidebar when filtering on mobile ', async () => {
 		const { container } = renderWithTheme(
 			<ExploreSidebar items={mock} onFilter={jest.fn} />
 		)
 
 		const variant = {
-			media: '(max-width:768px)',
-			modifier: String(css`
+			media: '(max-width: 768px)',
+			modifier: css`
 				${Overlay}
-			`)
+			`
 		}
 
 		const Element = container.firstChild
 
-		expect(Element).toHaveStyleRule('opacity', '0', variant)
+		expect(Element).not.toHaveStyleRule('opacity', '1', variant)
 
 		userEvent.click(screen.getByLabelText(/open filters/))
 
-		expect(Element).toHaveStyleRule('opacity', '1', variant)
+		await waitFor(() =>
+			expect(Element).toHaveStyleRule('opacity', '1', variant)
+		)
 
 		userEvent.click(screen.getByLabelText(/close filters/))
 
-		expect(Element).not.toHaveStyleRule('opacity', '1', variant)
+		await waitFor(() =>
+			expect(Element).not.toHaveStyleRule('opacity', '1', variant)
+		)
 	})
 })
