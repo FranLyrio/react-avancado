@@ -37,7 +37,7 @@ const ExploreSidebar = ({
 	initialValues = {}
 }: ExploreSidebarProps) => {
 	const [values, setValues] = useState(initialValues)
-	const [isOpen, setIsOpen] = useState(true)
+	const [isOpen, setIsOpen] = useState(false)
 
 	const handleChange = (field: string, value: string | boolean) => {
 		setValues((prev) => ({ ...prev, [field]: value }))
@@ -50,7 +50,7 @@ const ExploreSidebar = ({
 
 	return (
 		<S.Wrapper isOpen={isOpen}>
-			<S.Overlay className="over" aria-hidden={isOpen} />
+			<S.Overlay aria-hidden={isOpen} />
 			<S.IconWrapper>
 				<FilterList aria-label="open filters" onClick={() => setIsOpen(true)} />
 				<Close aria-label="close filters" onClick={() => setIsOpen(false)} />
