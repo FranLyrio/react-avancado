@@ -1,3 +1,4 @@
+import 'jest-styled-components'
 import { ReactNode } from 'react'
 
 import { ThemeProvider } from 'styled-components'
