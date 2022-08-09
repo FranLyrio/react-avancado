@@ -17,3 +17,7 @@ export default {
 } as Meta
 
 export const Basic: Story<CartListProps> = (args) => <CartList {...args} />
+
+export const WithButton: Story<CartListProps> = (args) => (
+	<CartList {...args} hasButton />
+)
