@@ -35,6 +35,7 @@ const CartList = ({ items, total, hasButton = false }: CartListProps) => (
 				<Empty
 					title="Your cart is empty"
 					description="Go back to the store and explore that games and offers"
+					hasLink
 				/>
 			</>
 		)}
