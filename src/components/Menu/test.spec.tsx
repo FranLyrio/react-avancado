@@ -1,4 +1,5 @@
-import { fireEvent, screen } from '@testing-library/react'
+import { fireEvent, screen, waitFor } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { renderWithTheme } from 'utils/tests/helpers'
 
 import Menu from '.'
@@ -8,7 +9,7 @@ describe('<Menu />', () => {
 		renderWithTheme(<Menu />)
 		expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument()
 		expect(screen.getByLabelText(/search/i)).toBeInTheDocument()
-		expect(screen.getByLabelText(/shopping cart/i)).toBeInTheDocument()
+		expect(screen.getAllByLabelText(/shopping cart/i)).toHaveLength(2)
 		expect(screen.getByRole('img', { name: /won games/i })).toBeInTheDocument()
 	})
 
@@ -43,10 +44,13 @@ describe('<Menu />', () => {
 		renderWithTheme(<Menu username="Fran" />)
 
 		expect(screen.queryByText(/log in now/i)).not.toBeInTheDocument()
-		expect(screen.queryByText(/sign up/i)).not.toBeInTheDocument()
 
-		expect(screen.getByText(/wishlist/i)).toBeInTheDocument()
-		expect(screen.getByText(/my account/i)).toBeInTheDocument()
+		userEvent.click(screen.getByText(/Fran/i))
+
+		waitFor(() => {
+			expect(screen.getByText(/wishlist/i)).toBeInTheDocument()
+			expect(screen.getByText(/my profile/i)).toBeInTheDocument()
+		})
 
 		expect(screen.queryByText(/sign in/i)).not.toBeInTheDocument()
 		expect(screen.queryByText(/sign up/i)).not.toBeInTheDocument()

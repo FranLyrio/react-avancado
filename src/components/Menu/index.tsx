@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Menu2 as MenuIcon } from '@styled-icons/remix-fill/Menu2'
-import { ShoppingCart as ShoppingCartIcon } from '@styled-icons/material-outlined/ShoppingCart'
 import { Search as SearchIcon } from '@styled-icons/material-outlined/Search'
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close'
 
 import Button from 'components/Button'
 import Logo from 'components/Logo'
 import MediaMatch from 'components/MediaMatch'
+import CartDropdown from 'components/CartDropdown'
+import Cart from 'components/Cart'
+import UserDropdown from 'components/UserDropdown'
 
 import * as S from './styles'
 
@@ -51,15 +53,27 @@ const Menu = ({ username }: MenuProps) => {
 				</S.IconWrapper>
 
 				<S.IconWrapper>
-					<ShoppingCartIcon aria-label="Open shopping cart" />
+					<MediaMatch greaterThan="medium">
+						<CartDropdown />
+					</MediaMatch>
+
+					<MediaMatch lessThan="medium">
+						<Link href="/cart">
+							<a>
+								<Cart />
+							</a>
+						</Link>
+					</MediaMatch>
 				</S.IconWrapper>
 
-				{!username && (
+				{!username ? (
 					<MediaMatch greaterThan="medium">
 						<Link href="/sign-in" passHref>
 							<Button as="a">Sign in</Button>
 						</Link>
 					</MediaMatch>
+				) : (
+					<UserDropdown username={username} />
 				)}
 			</S.MenuGroup>
 
@@ -75,8 +89,13 @@ const Menu = ({ username }: MenuProps) => {
 
 					{!!username && (
 						<>
-							<S.MenuLink href="#">My account</S.MenuLink>
-							<S.MenuLink href="#">Wishlist</S.MenuLink>
+							<Link href="/profile/me" passHref>
+								<S.MenuLink>My profile</S.MenuLink>
+							</Link>
+
+							<Link href="/profile/wishlist" passHref>
+								<S.MenuLink>Wishlist</S.MenuLink>
+							</Link>
 						</>
 					)}
 				</S.MenuNav>
